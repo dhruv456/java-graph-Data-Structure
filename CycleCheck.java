@@ -7,7 +7,6 @@ public class CycleCheck {
     }
 
     public static Boolean cycleDFS(ArrayList<ArrayList<Integer>> adj, int str, int prev, Boolean[] vertBooleans) {
-        // System.out.println(str);
         vertBooleans[str] = true;
         for (int i = 0; i < adj.get(str).size(); i++) {
             int v = adj.get(str).get(i);
@@ -16,16 +15,13 @@ public class CycleCheck {
             }
             if(!vertBooleans[v]) {
                 if(cycleDFS(adj, v, str, vertBooleans)){
-                    System.out.println(str + " true");
                     return true;
                 }
             } else {
                 
-                System.out.println(str + " true");
                 return true;
             }
         }
-        System.out.println(str + " false");
         return false;
     }
 
@@ -58,11 +54,11 @@ public class CycleCheck {
         for (int i = 0; i < vertexVisit.length; i++) {
             if(!vertexVisit[i]) {
                 if(cycleDFS(adj, i, -1, vertexVisit)){
-                    System.out.println("CYCLE IS PRESENt");
+                    System.out.println("CYCLE IS PRESENT");
                     return;
                 }
             }
         }
-        System.out.println("CYCLE IS NOT PRESENt");
+        System.out.println("CYCLE IS NOT PRESENT");
     }
 }
