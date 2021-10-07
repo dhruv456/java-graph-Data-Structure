@@ -25,6 +25,7 @@ public class BellmanFord {
     static void relaxVertex(int u_vertex, int v_vertex, int weight) {
         if(vertexDistance[v_vertex] > vertexDistance[u_vertex] + weight) {
             vertexDistance[v_vertex] = vertexDistance[u_vertex] + weight;
+            predecessorArray[v_vertex] = u_vertex;
         }
     }
 
@@ -46,7 +47,7 @@ public class BellmanFord {
     // Main function
     public static void main(String[] args) {
         // single source is '0'
-        // number of vertices is 5 i.e (0,1,2,3,4)
+        // number of vertices is 5 i.e (0,1,2,3,4,5,6,7)
         int noVertex = 8;
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>(noVertex);
         for (int i = 0; i < noVertex; i++) {
@@ -77,7 +78,11 @@ public class BellmanFord {
         }
         BLF(edgesArray);
         for(int n : vertexDistance) {
-            System.out.println(n);
+            System.out.print(n + " ");
+        }
+        System.out.println("-------------------------------------------");
+        for(int n : predecessorArray) {
+            System.out.print(n + " ");
         }
     }
 }
