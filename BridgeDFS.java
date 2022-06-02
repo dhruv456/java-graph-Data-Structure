@@ -39,9 +39,9 @@ public class BridgeDFS {
         }
         /*
         0-----1---4
-        |     |  /
-        |     | /
-        |     |/
+              |  /
+              | /
+              |/
         3-----2
         */
         addEdge(adj, 2, 3);
