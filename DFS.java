@@ -9,8 +9,7 @@ public class DFS {
     public static void depthFirstSearch(ArrayList<ArrayList<Integer>> adj, int str, Boolean[] vertBooleans) {
         System.out.println(str);
         vertBooleans[str] = true;
-        for (int i = 0; i < adj.get(str).size(); i++) {
-            int v = adj.get(str).get(i);
+        for (int v : adj.get(str)) {
             if(!vertBooleans[v]) {
                 depthFirstSearch(adj, v, vertBooleans);
             }
