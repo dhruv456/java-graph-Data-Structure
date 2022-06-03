@@ -24,7 +24,7 @@ public class BridgeDFS {
                     System.out.println(v + " ---- " + str);
                 }
             } else {
-                low[str] = Math.min(low[str], low[v]);
+                low[str] = Math.min(low[str], tin[v]);
             }
 
         }
